@@ -16,12 +16,13 @@
   $stockid = "GME";
   $stmt->execute();
   $result = $stmt->get_result();
-  while ($row = $result->fetch_assoc()){
+  $return_arr = array();
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc()
     foreach ($row as $r){
-      print "$r";
-      print "<tr><td>$r</td><td>$stockid</td><td>$r</td><td>$$</td></tr>";
-  }
-  }
-  $conn->close();
+        print "<tr><td>$row["username"]</td><td>$stockid</td><td>$row["portfolio"]</td><td>$$ €€</td></tr>";
+    }
+}else {echo 0;}
+$conn->close();
 ?>
 </table>
