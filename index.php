@@ -4,13 +4,13 @@
 </head>
 <div class="parent">
 
-<header class="blue section" contenteditable>
+<header class="total" contenteditable>
   <?php require "./include/total.php"; ?>
 </header>
-<main class="coral section" contenteditable>
+<main class="table" contenteditable>
   <?php require "./include/table.php"; ?>
 </main>
-<footer class="purple section" contenteditable>
+<footer class="fotter" contenteditable>
   <?php require "./include/footer.php"; ?>
 </footer>
 </div>
