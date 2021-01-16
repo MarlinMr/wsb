@@ -1,6 +1,6 @@
 <?php
 SELECT "SUM(portfolio) AS total FROM stocks WHERE stock =?";
-require "connhandler.php";
+#require "connhandler.php";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $stockid);
 $imgid = $_GET["stock"];
