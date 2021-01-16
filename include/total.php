@@ -3,7 +3,8 @@
   require "connhandler.php";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $stockid);
-  $stockid = $_GET["stock"];
+  #$stockid = $_GET["stock"];
+  $stockid = 'GME';
   $stmt->execute();
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
