@@ -18,7 +18,8 @@
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
     foreach ($row as $r){
-      print "<tr><td>$r</td><td>$stockid</td><td>$r</td><td>'$$'</td></tr>";
+      print "$r";
+      print "<tr><td>$r</td><td>$stockid</td><td>$r</td><td>$$</td></tr>";
   }
   }
   $conn->close();
