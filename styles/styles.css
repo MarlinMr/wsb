@@ -1,13 +1,51 @@
 html {
-    background:#000000;
-    color:#FFF700;
+    #background:#000000;
+    #color:#FFF700;
     font-size: small;
-	font-family: "Arial black";
+    font-family: "Arial black";
+    margin: 0 auto;
 }
-
+body {
+	width: 100%;
+	margin: 0 auto;
+}
+.total {
+	#z-index: 10;
+	#position:fixed;
+	top:0;
+	width:100%;
+	background:white;
+}
+.footer {
+	z-index: 5;
+	position:fixed;
+	display: block;
+	bottom:0;
+	right:0;
+	#width:100%;
+	background:white;
+	text-align:left;
+}
+.table {
+	position:relative;
+	display: block;
+        z-index: 3;
+}
+.table tbody {
+	overflow:auto;
+	width:100%;
+}
 .parent {
     height: 100%;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    #grid-template-rows: auto 1fr auto;
     text-align: center;
+    margin: 0 auto;
+  }
+  .table table, th, td{
+	  border: 2px solid black;
+	  margin: 0 auto;
+	  padding: 0 auto;
+	  border-collapse: collapse;
+	  text-align:center;
   }

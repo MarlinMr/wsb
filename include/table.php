@@ -1,6 +1,5 @@
-<p>PLACEHOLDER</p>
-<p>Comming: Table of investors </p>
-<table style="width:100%">
+<p>Table of investors </p>
+<table style="width:100%" class="searchable sortable">
   <tr>
     <th>User</th>
     <th>Stock</th> 
@@ -12,16 +11,19 @@
   require "connhandler.php";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $stockid);
-  #$stockid = $_GET["stock"];
-  $stockid = "GME";
+  if (empty($_GET)){
+	  $stockid = "GME";
+  }else{  $stockid = $_GET["stockid"];}
+  #$stockid = "GME";
   $stmt->execute();
   $result = $stmt->get_result();
   $return_arr = array();
   if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    foreach ($row as $r){
-        print "$r";
-        print "<tr><td>$r["username"]</td><td>$stockid</td><td>$r["portfolio"]</td><td>🚀</td></tr>";
+    while ($row = $result->fetch_assoc()){
+	$username = $row["username"];
+	$portfolio = $row["portfolio"];
+	$url = "https://reddit.com/u/$username";
+        print "<tr><td><a href=$url>$username</a></td><td>$stockid</td><td>$portfolio</td><td>🚀</td></tr>";
     }
 }else {echo 0;}
 $conn->close();
