@@ -4,15 +4,18 @@
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ss", $stockid, $username);
   #$stockid = $_GET["stock"];
-  $stockid = "PLTR";
+  $stockid = "GME";
   $username = "TEST";
+  $change = 12;
   $stmt->execute();
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
     if ($result->num_rows > 0) {
-    foreach ($row as $r){
-      print "$r";
-  }}
+      foreach ($row as $r){
+        $r = $r + $change
+        print "$r";
+      }
+    }
   }
   $conn->close();
 ?>
