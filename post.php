@@ -1,6 +1,6 @@
 <?php
   $sql = "SELECT portfolio FROM stocks WHERE stock =? AND username =?";
-  require "connhandler.php";
+  require "./include/connhandler.php";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ss", $stockid, $username);
   #$stockid = $_GET["stock"];
