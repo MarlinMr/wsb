@@ -12,7 +12,7 @@
   while ($row = $result->fetch_assoc()){
     if ($result->num_rows > 0) {
       foreach ($row as $r){
-        $r = $r + $change
+        $r = $r + $change;
         print "$r";
       }
     }
