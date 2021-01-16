@@ -13,10 +13,10 @@
       foreach ($row as $r){
         $r = $r + $change;
         print "$r";
+      }else{
+        print "new record";
       }
-    }else{
-      print "new record";
-    }
+  }
   }
   $conn->close();
 ?>
