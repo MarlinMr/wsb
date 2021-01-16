@@ -1,5 +1,4 @@
 html {
-    height: 100%;
     background:#000000;
     color:#FFF700;
     font-size: small;
@@ -7,6 +6,7 @@ html {
 }
 
 .parent {
+    height: 100%;
     display: grid;
     grid-template-rows: auto 1fr auto;
     text-align: center;
