@@ -3,7 +3,7 @@
   require "connhandler.php";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("s", $stockid);
-  $imgid = $_GET["stock"];
+  $stockid = $_GET["stock"];
   $stmt->execute();
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
