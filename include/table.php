@@ -20,7 +20,7 @@
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     foreach ($row as $r){
-        print "<tr><td>test</td><td>test</td><td>test</td><td>test</td></tr>";
+        print "<tr><td>$row["username"]</td><td>test</td><td>test</td><td>test</td></tr>";
     }
 }else {echo 0;}
 $conn->close();
