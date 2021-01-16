@@ -8,12 +8,11 @@
   $change = $_GET["change"];
   $stmt->execute();
   $result = $stmt->get_result();
-  while ($row = $result->fetch_assoc()){
-    if ($result->num_rows > 0) {
+  if ($row = $result->fetch_assoc()){
       foreach ($row as $r){
         $r = $r + $change;
         print "$r";
-      }
+      
     } 
   }else {
         print "no such entry";
