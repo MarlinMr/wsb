@@ -9,7 +9,7 @@
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
     foreach ($row as $r){
-      print "<div id='total'><h1>Total WSB owned $stockid stock:<br> $r <h1></div>";
+      print "<div id='total'><h1>Total $stockid owned by WSB:<br> $r <h1></div>";
   }
   }
   $conn->close();
