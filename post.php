@@ -4,7 +4,7 @@
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ss", $stockid, $username);
   #$stockid = $_GET["stock"];
-  $stockid = "GME";
+  $stockid = "PLTR";
   $username = "TEST";
   $stmt->execute();
   $result = $stmt->get_result();
