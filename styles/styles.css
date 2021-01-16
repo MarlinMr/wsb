@@ -3,5 +3,9 @@ html {
     background:#000000;
     color:#FFF700;
     font-size: small;
-	font-family: "Arial black";
+    font-family: "Arial black";
 }
+.parent {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
