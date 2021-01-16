@@ -18,22 +18,21 @@
         $sql = "UPDATE stocks SET portfolio =?, timestamp =? WHERE username =? AND stock =?";
         require "./include/connhandler.php";
         if($stmt = $conn->prepare($sql)){
-        print "$stmt";
-        $stmt->bind_param("iiss",  $change, $timestamp, $stockid, $username);
-        $stmt->execute();
-        $stmt->close();
-        $conn->close();
-        print "had $r now has $change";
+          $stmt->bind_param("iiss", $change, $timestamp, $stockid, $username);
+          $stmt->execute();
+          $stmt->close();
+          $conn->close();
+          print "had $r now has $change";
         }else{exit();}
     } 
   }else {
     $sql = "INSERT INTO stocks (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
     require "./include/connhandler.php";
     if($stmt = $conn->prepare($sql)){
-    $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
-    $stmt->execute();
-    $stmt->close();
-    $conn->close();
+      $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
+      $stmt->execute();
+      $stmt->close();
+      $conn->close();
     }else{exit();}
     }
 ?>
