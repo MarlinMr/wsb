@@ -14,9 +14,9 @@
         $r = $r + $change;
         print "$r";
       }
-    } else {
+    } 
+  }else {
         print "no such entry";
     }
-  }
   $conn->close();
 ?>
