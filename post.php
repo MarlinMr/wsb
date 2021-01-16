@@ -14,8 +14,15 @@
   $conn->close();
   if ($row = $result->fetch_assoc()){
       foreach ($row as $r){
-        $r = $r + $change;
-        print "$r";
+        $change = $r + $change;
+        $sql = "UPDATE stocks SET portfolio =?, timestamp =? WHERE username =? AND stock =?";
+        require "./include/connhandler.php";
+        if($stmt = $conn->prepare($sql)){
+        $stmt->bind_param("iiss",  $change, $timestamp, $stockid, $username,);
+        $stmt->execute();
+        $stmt->close();
+        $conn->close();
+        }else{exit();}
     } 
   }else {
     $sql = "INSERT INTO stocks (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
