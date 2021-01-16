@@ -19,7 +19,8 @@
   }else {
     $sql = "INSERT INTO (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
     require "./include/connhandler.php";
-    if ($stmt = $conn->prepare($sql)){
+    if ($conn->prepare($sql)){
+      $stmt = $conn->prepare($sql)
       print "ny entry";
       $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
       $stmt->execute();
