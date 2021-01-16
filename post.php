@@ -14,8 +14,8 @@
         $r = $r + $change;
         print "$r";
       }
-    }else{
-        print "new record";
+    } else {
+        print "no such entry";
     }
   }
   $conn->close();
