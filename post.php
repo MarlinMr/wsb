@@ -10,6 +10,7 @@
   $timestamp = $date->getTimestamp();
   $stmt->execute();
   $result = $stmt->get_result();
+  $stmt->close();
   $conn->close();
   if ($row = $result->fetch_assoc()){
       foreach ($row as $r){
@@ -19,14 +20,9 @@
   }else {
     $sql = "INSERT INTO (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
     require "./include/connhandler.php";
-    if ($conn->prepare($sql)){
-      $stmt = $conn->prepare($sql);
-      print "ny entry";
-      $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
-      $stmt->execute();
-      $conn->close();
-    }else{
-      exit();
-    }
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
+    $stmt->close();
+    $conn->close();
     }
 ?>
