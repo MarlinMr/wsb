@@ -18,7 +18,7 @@
   $result = $stmt->get_result();
   $return_arr = array();
   if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc()
+    $row = $result->fetch_assoc();
     foreach ($row as $r){
         print "<tr><td>$row["username"]</td><td>$stockid</td><td>$row["portfolio"]</td><td>$$ €€</td></tr>";
     }
