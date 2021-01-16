@@ -7,9 +7,9 @@ $imgid = $_GET["stock"];
 $stmt->execute();
 $result = $stmt->get_result();
 while ($row = $result->fetch_assoc()){
-  foreach ($row as $r){
-    print "$r ";
-  }
+  #foreach ($row as $r){
+    #print "$r ";
+  #}
 }
 $conn->close();
 ?>
