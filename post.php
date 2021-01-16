@@ -22,6 +22,7 @@
         $stmt->execute();
         $stmt->close();
         $conn->close();
+        print "had $r now has $change";
         }else{exit();}
     } 
   }else {
