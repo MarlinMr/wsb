@@ -20,9 +20,11 @@
   }else {
     $sql = "INSERT INTO stocks (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
     require "./include/connhandler.php";
-    $stmt = $conn->prepare($sql);
+    if($stmt = $conn->prepare($sql)){
     $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
-    #$stmt->close();
-    #$conn->close();
+    $stmt->execute();
+    $stmt->close();
+    $conn->close();
+    }else{exit();}
     }
 ?>
