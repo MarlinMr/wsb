@@ -18,6 +18,7 @@
         $sql = "UPDATE stocks SET portfolio =?, timestamp =? WHERE username =? AND stock =?";
         require "./include/connhandler.php";
         if($stmt = $conn->prepare($sql)){
+        print "$stmt";
         $stmt->bind_param("iiss",  $change, $timestamp, $stockid, $username);
         $stmt->execute();
         $stmt->close();
