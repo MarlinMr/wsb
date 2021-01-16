@@ -15,6 +15,8 @@
         $r = $r + $change;
         print "$r";
       }
+    }else{
+      print "new record";
     }
   }
   $conn->close();
