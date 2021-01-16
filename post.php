@@ -3,10 +3,9 @@
   require "./include/connhandler.php";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("ss", $stockid, $username);
-  #$stockid = $_GET["stock"];
-  $stockid = "test";
-  $username = "TEST";
-  $change = 12;
+  $stockid = $_GET["stock"];
+  $username = $_GET["username"];
+  $change = $_GET["change"];
   $stmt->execute();
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
