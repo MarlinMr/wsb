@@ -9,9 +9,10 @@
   $stmt->execute();
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
+    if ($result->num_rows > 0) {
     foreach ($row as $r){
       print "$r";
-  }
+  }}
   }
   $conn->close();
 ?>
