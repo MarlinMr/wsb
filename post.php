@@ -6,6 +6,8 @@
   $stockid = $_GET["stock"];
   $username = $_GET["username"];
   $change = $_GET["change"];
+  $date = new DateTime();
+  $timestamp = $date->getTimestamp();
   $stmt->execute();
   $result = $stmt->get_result();
   $conn->close();
@@ -15,6 +17,13 @@
         print "$r";
     } 
   }else {
-        print "no such entry";
+    $sql = "INSERT INTO (stock, username, portfolio, timestamp) VALUES (?, ?, ?, ?)";
+    require "./include/connhandler.php";
+    if ("$stmt = $conn->prepare($sql);){exit();
+    }else{
+      $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
+      $stmt->execute();
+      $conn->close();
+    }
     }
 ?>
