@@ -8,7 +8,7 @@
   $result = $stmt->get_result();
   while ($row = $result->fetch_assoc()){
     foreach ($row as $r){
-      print "$r ";
+      print "$stockid ':' $r ";
   }
   }
   $conn->close();
