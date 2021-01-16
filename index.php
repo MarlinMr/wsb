@@ -1,7 +1,9 @@
 <?php if(!isset($_SERVER['HTTPS'])) {header("https://marlinmr.se/MarlinMr/wsb/index.php"); exit;} ?>
-
+<head>
+  <?php require "./head.html"; ?>
+</head>
 <div class="parent">
-<?php require "./head.html"; ?>
+
 <header class="blue section" contenteditable>
   <?php require "./include/total.php"; ?>
 </header>
