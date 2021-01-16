@@ -21,6 +21,7 @@
     require "./include/connhandler.php";
     if (!$stmt = $conn->prepare($sql)){exit();
     }else{
+      print "ny entry";
       $stmt->bind_param("ssii", $stockid, $username, $change, $timestamp);
       $stmt->execute();
       $conn->close();
